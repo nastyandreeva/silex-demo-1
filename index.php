@@ -7,7 +7,7 @@
     'twig.path' => __DIR__.'/views',
   ));
 
-  $app->get('/', function () {
+  $app->get('/', function () use($app) {
     return $app['twig']->render('home.twig', array(
       'content' => 'Добро пожаловать!'
     ));  
