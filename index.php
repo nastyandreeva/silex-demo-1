@@ -13,4 +13,12 @@
     ));  
   });
 
+  $app->error(function ($e) use($app) {
+    if ($e instanceof Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {
+      return new Response($app['twig']->render('404.twig'), 404);
+    } else {
+      return new Response($app['twig']->render('500.twig'), 500);
+    };
+  });
+
   $app->run();
