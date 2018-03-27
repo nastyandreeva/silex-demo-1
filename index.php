@@ -1,5 +1,7 @@
 <?php
   require 'vendor/autoload.php';
+  
+  use Symfony\Component\HttpFoundation\Response;
 
   //const app = express();
   $app = new Silex\Application();
