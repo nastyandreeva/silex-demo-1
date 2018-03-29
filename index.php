@@ -21,7 +21,7 @@
   });
   
   $app->get('/add/{n1}/{n2}', function ($n1, $n2) use($app) {
-    return '<h2>Сумма: </h2><h3>' . ($n1 + $n2) . '</h3'; 
+    return '<h2>Сумма: </h2><h3>' . ($n1 + $n2) . '</h3>'; 
   })->after($hdrs);
 
   $app->error(function ($e) use($app) {
