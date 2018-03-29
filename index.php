@@ -8,11 +8,16 @@
   $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/views',
   ));
+  
 
   $app->get('/', function () use($app) {
     return $app['twig']->render('home.twig', array(
       'content' => 'Добро пожаловать!'
     ));  
+  });
+  
+  $app->get('/add/{n1}/{n2}', function ($n1, $n2) use($app) {
+    return '<h2>Сумма: </h2><h3>' . ($n1 + $n2) . '</h3'; 
   });
 
   $app->error(function ($e) use($app) {
